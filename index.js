@@ -6,7 +6,18 @@ const port = 8092;
 const server = http.createServer((req, res) => {
   res.statusCode = 200;
   res.setHeader('Content-Type', 'text/plain');
-  res.end('yosura\n');
+  let arreglo =[
+    {
+    nombre: "Juan",
+    apellido: "Perez"
+    },
+    {
+        nombre: "Mario",
+        apellido: "Bros"
+    }
+  ]
+
+  res.write(JSON.stringify(arreglo))
 });
 
 server.listen(port, hostname, () => {
